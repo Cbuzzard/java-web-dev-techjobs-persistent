@@ -40,4 +40,6 @@ public class Employer extends AbstractEntity {
     public void setJobs(List<Job> jobs) {
         this.jobs = jobs;
     }
+
+
 }
