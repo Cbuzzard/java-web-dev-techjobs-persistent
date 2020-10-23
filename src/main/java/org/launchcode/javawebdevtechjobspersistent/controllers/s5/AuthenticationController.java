@@ -35,7 +35,7 @@ public class AuthenticationController {
 
         Optional<User> user = userRepository.findById(userId);
 
-        if (user.isEmpty()) {
+        if (!user.isPresent()) {
             return null;
         }
 

@@ -40,8 +40,8 @@ public class SkillController {
 
     @GetMapping("view/{skillId}")
     public String displayViewSkill(Model model, @PathVariable int skillId) {
-        Skill skill = skillRepository.findById(skillId).orElseThrow();
-        model.addAttribute("skill", skill);
+        Optional<Skill> skill = skillRepository.findById(skillId);
+        model.addAttribute("skill", skill.get());
         return "skills/view";
     }
     

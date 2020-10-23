@@ -49,7 +49,7 @@ public class HomeControllerS5 {
     public String displayViewJob(Model model, @PathVariable int jobId) {
 
         Optional optJob = jobRepository.findById(jobId);
-        if (!optJob.isEmpty()) {
+        if (optJob.isPresent()) {
             JobS5 job = (JobS5) optJob.get();
             model.addAttribute("job", job);
             return "s5/view";
